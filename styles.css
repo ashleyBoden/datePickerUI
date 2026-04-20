@@ -1,0 +1,111 @@
+* {
+    font-family: Arial, sans-serif;
+}
+
+main {
+    border: 1px solid black;
+    display: grid;
+    grid-template-columns: 100px 100px 100px;
+    grid-template-rows: 50px 50px 200px;
+    grid-template-areas: "input input icon"
+                         "prev header next"
+                         "calendar calendar calendar";
+    width: 300px;
+    padding: 10px;
+}
+
+#calendar-icon {
+    width: 30px;
+    height: 30px;
+    grid-area: icon;
+    justify-self: center;
+    align-self: center;
+}
+
+#date-input {
+    width: 200px;
+    height: 30px;
+    grid-area: input;
+    justify-self: center;
+    align-self: center;
+    margin-left: 15px;
+    padding-left: 10px;
+}
+
+#prev-month {
+    grid-area: prev;
+    height: 30px;
+    width: 30px;
+    align-self: center;
+    justify-self: center;
+    background-image: url(Assets/right-arrow.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    transform: rotate(180deg);
+}
+
+#next-month {
+    grid-area: next;
+    height: 30px;
+    width: 30px;
+    align-self: center;
+    justify-self: center;
+    background-image: url(Assets/right-arrow.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    padding: 5px
+}
+
+#next-month:hover {
+    transform: scale(1.1);
+    transition: ease 0.2s;
+}
+
+#prev-month:hover {
+    transform: scale(1.1) rotate(180deg);
+    transition: ease 0.2s;
+}
+
+#month-year {
+    grid-area: header;
+    font-weight: bold;
+    text-align: center;
+    font-size: 18px;
+    justify-self: center;
+    align-self: center;
+
+}
+
+.calendar-container {
+    margin-top: 10px;
+}
+
+.calendar-table {
+    grid-area: calendar;
+}
+
+.calendar-table table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.calendar-table th, .calendar-table td {
+    border: 1px solid black;
+    text-align: center;
+    padding: 5px;
+}
+
+.calendar-table th {
+    background-color: #f0f0f0;
+}
+
+td:hover {
+    cursor: pointer;
+    box-shadow: inset 0 0 5px rgb(0, 0, 0);
+}
